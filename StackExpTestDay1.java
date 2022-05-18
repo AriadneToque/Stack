@@ -40,16 +40,16 @@ public class StackExpTestDay1
         s.push(Math.pow(first, second) + "");
       }
     }
-//    else if("!".indexOf(exp.substring(x, x + 1)) > 0)
-//    {
-//      double val = Double.valueOf(s.pop());
-//      double result = 1.0;
-//      for(Double y = val; y > 0; y--)
-//      {
-//        result = result * y;
-//      }
-//      s.push(result + "");
-//    }
+    else if("!".indexOf(exp.substring(x, x + 1)) > 0)
+    {
+      double val = Double.valueOf(s.pop());
+      double result = 1.0;
+      for(Double y = val; y > 0; y--)
+      {
+        result = result * y;
+      }
+      s.push(result + "");
+    }
   }
   return Double.valueOf(s.pop());
  }
