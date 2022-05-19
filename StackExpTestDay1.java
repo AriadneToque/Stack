@@ -11,10 +11,11 @@ public class StackExpTestDay1
     {
       s.push(exp.substring(x, x + 1));
     }
-    else if("+-/*%^".indexOf(exp.substring(x, x + 1)) > 0)
+    else if("+-/*%^".indexOf(exp.substring(x, x + 1)) >= 0)
     {
       double second = Double.valueOf(s.pop());
       double first = Double.valueOf(s.pop());
+      
       if(exp.substring(x, x + 1).equals("+"))
       {
         s.push(first + second + "");
@@ -40,11 +41,11 @@ public class StackExpTestDay1
         s.push(Math.pow(first, second) + "");
       }
     }
-    else if("!".indexOf(exp.substring(x, x + 1)) > 0)
+    else if(exp.substring(x, x + 1).equals("!"))
     {
       double val = Double.valueOf(s.pop());
       double result = 1.0;
-      for(Double y = val; y > 0; y--)
+      for(double y = val; y > 0; y--)
       {
         result = result * y;
       }
